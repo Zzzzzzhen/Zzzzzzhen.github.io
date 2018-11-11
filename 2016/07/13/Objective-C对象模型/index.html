@@ -82,12 +82,12 @@
 <meta name="description" content="Objective-C 是一门面向对象的程序设计语言，它的对象模型是基于类来建立的。我们可以在苹果开源的 runtime 中发现 Objective-C 对象模型的实现细节 对象在 Objective-C 中，每一个对象都是某个类的实例，且这个对象的isa指针指向它所属的类。 打开刚下载的 runtime 工程，在文件 objc-private.h 中，我们可以找到 Objective-C 中的对">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Objective-C对象模型">
-<meta property="og:url" content="http://yoursite.com/2016/07/11/Objective-C对象模型/index.html">
+<meta property="og:url" content="http://yoursite.com/2016/07/13/Objective-C对象模型/index.html">
 <meta property="og:site_name" content="zhaoz的blog">
 <meta property="og:description" content="Objective-C 是一门面向对象的程序设计语言，它的对象模型是基于类来建立的。我们可以在苹果开源的 runtime 中发现 Objective-C 对象模型的实现细节 对象在 Objective-C 中，每一个对象都是某个类的实例，且这个对象的isa指针指向它所属的类。 打开刚下载的 runtime 工程，在文件 objc-private.h 中，我们可以找到 Objective-C 中的对">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://blog.devtang.com/images/class-diagram.jpg">
-<meta property="og:updated_time" content="2018-11-11T14:00:06.800Z">
+<meta property="og:updated_time" content="2018-11-11T14:07:48.414Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Objective-C对象模型">
 <meta name="twitter:description" content="Objective-C 是一门面向对象的程序设计语言，它的对象模型是基于类来建立的。我们可以在苹果开源的 runtime 中发现 Objective-C 对象模型的实现细节 对象在 Objective-C 中，每一个对象都是某个类的实例，且这个对象的isa指针指向它所属的类。 打开刚下载的 runtime 工程，在文件 objc-private.h 中，我们可以找到 Objective-C 中的对">
@@ -121,7 +121,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/07/11/Objective-C对象模型/">
+  <link rel="canonical" href="http://yoursite.com/2016/07/13/Objective-C对象模型/">
 
 
 
@@ -234,7 +234,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/11/Objective-C对象模型/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/13/Objective-C对象模型/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="zhaoz">
@@ -263,8 +263,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-11T21:25:19+08:00">
-                2016-07-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-13T00:00:00+08:00">
+                2016-07-13
               </time>
             
 
@@ -314,7 +314,8 @@
 <p>因此，我们也可以通过调用类方法，比如 <code>[NSObject new]</code>，给类对象发送消息。同样的，类对象能否响应这个消息也要通过 <code>isa</code> 找到类对象所属的类（元类）才能知道。也就是说，实例方法是保存在类中的，而类方法是保存在元类中的。</p>
 <p>元类也是对象（元类对象），元类也是某个类的实例，这个类我们称之为根元类（root metaclass）。根元类指的就是根类的元类，具体来说就是根类 NSObject 对应的元类。</p>
 <p>因此，理论上我们也可以给元类发送消息，但是 Objective-C 倾向于隐藏元类，不想让大家知道元类的存在。元类是为了保持 Objective-C 对象模型在设计上的完整性而引入的，比如用来保存类方法等，它主要是用来给编译器使用的。</p>
-<p>下面这张图对 <code>isa</code> 和继承的关系清楚一些<br><img src="http://blog.devtang.com/images/class-diagram.jpg" alt=""></p>
+<p>下面这张图对 <code>isa</code> 和继承的关系清楚一些</p>
+<p><img src="http://blog.devtang.com/images/class-diagram.jpg" alt=""></p>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
 <li><a href="">http://www.devtang.com/blog/2013/10/15/objective-c-object-model/</a></li>
 </ul>
